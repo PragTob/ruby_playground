@@ -30,20 +30,20 @@ Benchmark.ips do |bm|
 end
 
 # Ruby 2.3:
+# Warming up --------------------------------------
+# Struct.new(...).new    12.625k i/100ms
+# SavedStruct.new   147.232k i/100ms
+# 2 element array   179.250k i/100ms
+# Hash with 2 keys   119.803k i/100ms
 # Calculating -------------------------------------
-# Struct.new(...).new    11.739k i/100ms
-# SavedStruct.new   142.314k i/100ms
-# 2 element array   168.250k i/100ms
-# Hash with 2 keys   108.454k i/100ms
-# -------------------------------------------------
-# Struct.new(...).new    111.902k (± 9.3%) i/s -    563.472k
-# SavedStruct.new      3.930M (± 5.7%) i/s -     19.639M
-# 2 element array      6.911M (± 4.2%) i/s -     34.491M
-# Hash with 2 keys      2.418M (± 3.8%) i/s -     12.147M
+# Struct.new(...).new    137.801k (± 3.0%) i/s -    694.375k
+# SavedStruct.new      4.592M (± 1.7%) i/s -     22.968M
+# 2 element array      7.465M (± 1.4%) i/s -     37.463M
+# Hash with 2 keys      2.666M (± 1.6%) i/s -     13.418M
 #
 # Comparison:
-#   2 element array:  6911144.9 i/s
-# SavedStruct.new:  3929604.4 i/s - 1.76x slower
-# Hash with 2 keys:  2417552.9 i/s - 2.86x slower
-# Struct.new(...).new:   111901.9 i/s - 61.76x slower
+#   2 element array:  7464662.6 i/s
+# SavedStruct.new:  4592490.5 i/s - 1.63x slower
+# Hash with 2 keys:  2665601.5 i/s - 2.80x slower
+# Struct.new(...).new:   137801.1 i/s - 54.17x slower
 

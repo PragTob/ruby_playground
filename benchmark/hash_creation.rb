@@ -36,28 +36,26 @@ Benchmark.ips do |bm|
   bm.compare!
 end
 
-# CAUTION! ran on battery power.
-#
 # tobi@comfy ~/github/ruby_playground $ ruby benchmark/hash_creation.rb
 # Warming up --------------------------------------
-#               reduce   309.000  i/100ms
-#     each_with_object   324.000  i/100ms
-#           Hash + zip   258.000  i/100ms
-#             map to_h   299.000  i/100ms
-#            map merge    31.000  i/100ms
-#           map merge!   140.000  i/100ms
+#               reduce   616.000  i/100ms
+#     each_with_object   619.000  i/100ms
+#           Hash + zip   523.000  i/100ms
+#             map to_h   610.000  i/100ms
+#            map merge    49.000  i/100ms
+#           map merge!   308.000  i/100ms
 # Calculating -------------------------------------
-#               reduce      3.078k (± 5.8%) i/s -     15.450k in   5.037230s
-#     each_with_object      3.022k (±12.2%) i/s -     14.904k in   5.022322s
-#           Hash + zip      2.477k (±15.3%) i/s -     12.126k in   5.032726s
-#             map to_h      3.294k (± 2.9%) i/s -     16.744k in   5.086917s
-#            map merge    303.481  (± 6.9%) i/s -      1.519k in   5.027826s
-#           map merge!      1.592k (± 1.8%) i/s -      7.980k in   5.013316s
+#               reduce      6.220k (± 2.8%) i/s -     31.416k in   5.054703s
+#     each_with_object      6.276k (± 3.7%) i/s -     31.569k in   5.037931s
+#           Hash + zip      5.499k (± 1.8%) i/s -     27.719k in   5.042398s
+#             map to_h      6.343k (± 4.1%) i/s -     31.720k in   5.010349s
+#            map merge    454.166  (± 8.8%) i/s -      2.303k in   5.108728s
+#           map merge!      3.006k (± 3.7%) i/s -     15.092k in   5.027872s
 
 # Comparison:
-#             map to_h:     3294.5 i/s
-#               reduce:     3078.0 i/s - same-ish: difference falls within error
-#     each_with_object:     3022.0 i/s - same-ish: difference falls within error
-#           Hash + zip:     2477.2 i/s - 1.33x  slower
-#           map merge!:     1592.3 i/s - 2.07x  slower
-#            map merge:      303.5 i/s - 10.86x  slower
+#             map to_h:     6343.0 i/s
+#     each_with_object:     6275.5 i/s - same-ish: difference falls within error
+#               reduce:     6220.3 i/s - same-ish: difference falls within error
+#           Hash + zip:     5499.0 i/s - 1.15x  slower
+#           map merge!:     3006.0 i/s - 2.11x  slower
+#            map merge:      454.2 i/s - 13.97x  slower

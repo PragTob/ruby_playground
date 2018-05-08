@@ -19,7 +19,7 @@ class Bottles
   private
 
   def new_bottle_count(number)
-    if number == 0
+    if number.zero?
       99
     else
       number - 1
@@ -35,16 +35,18 @@ class Bottles
   end
 
   def get_beer(number)
-    case number
-    when 0 then "Go to the store and buy some more"
-    else "Take #{n_down(number)} down and pass it around"
+    if number.zero?
+      "Go to the store and buy some more"
+    else
+      "Take #{n_down(number)} down and pass it around"
     end
   end
 
   def n_down(number)
-    case number
-    when 1 then "it"
-    else "one"
+    if number == 1
+      "it"
+    else
+      "one"
     end
   end
 end

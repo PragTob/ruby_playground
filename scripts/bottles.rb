@@ -12,14 +12,22 @@ class Bottles
   def verse(number)
     <<~VERSE
     #{n_bottles(number).capitalize} of beer on the wall, #{n_bottles(number)} of beer.
-    #{get_beer(number)}, #{n_bottles(number - 1)} of beer on the wall.
+    #{get_beer(number)}, #{n_bottles(new_bottle_count(number))} of beer on the wall.
     VERSE
   end
 
   private
+
+  def new_bottle_count(number)
+    if number == 0
+      99
+    else
+      number - 1
+    end
+  end
+
   def n_bottles(number)
     case number
-    when -1 then "99 bottles"
     when 0 then "no more bottles"
     when 1 then "1 bottle"
     else "#{number} bottles"

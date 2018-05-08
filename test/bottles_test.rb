@@ -1,3 +1,6 @@
+# Adapter from 99 bottles by the amazing Sandi Metz and Katrina Owen
+# https://github.com/sandimetz/99bottles/tree/exercise
+
 require 'minitest/autorun'
 
 require_relative '../scripts/bottles'
